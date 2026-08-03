@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Азамат & Айгерим</title>
+
+<meta name="theme-color" content="#f5e7c8">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ЗАГРУЗКА -->
+
+<div class="loader" id="loader">
+
+    <div class="loader-name">
+        Азамат & Айгерим
+    </div>
+
+    <div class="loader-line"></div>
+
+</div>
+
+
+
+<!-- КОНВЕРТ -->
+
+
+<section class="cover" id="cover">
+
+
+<div class="cover-text">
+
+Нажмите, чтобы открыть приглашение
+
+</div>
+
+
+
+<div class="envelope" onclick="openInvitation()">
+
+
+
+<div class="inside">
+
+
+<div class="card">
+
+
+<h1>
+
+Азамат
+
+<br>
+
+<span>&</span>
+
+<br>
+
+Айгерим
+
+
+</h1>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="flap"></div>
+
+
+<div class="front-left"></div>
+
+<div class="front-right"></div>
+
+
+
+<div class="seal">
+
+A & A
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- ОСНОВНОЙ САЙТ -->
+
+
+<div class="site hidden" id="site">
+
+
+
+<audio id="music" loop>
+
+<source src="violin.mp3" type="audio/mpeg">
+
+</audio>
+
+
+
+<button class="music-button" onclick="toggleMusic()">
+
+🎻
+
+</button>
+
+
+
+
+
+
+
+<section class="hero">
+
+
+<h1>
+
+Азамат & Айгерим
+
+</h1>
+
+
+
+<p>
+
+С любовью приглашаем вас
+разделить с нами самый важный день нашей жизни
+
+</p>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section class="welcome reveal">
+
+
+<h2>
+
+Дорогие родные и друзья!
+
+</h2>
+
+
+
+<p>
+
+С огромной радостью приглашаем вас
+на наше свадебное торжество.
+
+Будем счастливы видеть вас рядом с нами
+в этот особенный день.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- КАЛЕНДАРЬ -->
+
+
+<section class="calendar-section reveal">
+
+
+<h2>
+
+Дата нашей свадьбы
+
+</h2>
+
+
+
+<div class="calendar">
+
+
+
+<div class="calendar-title">
+
+ОКТЯБРЬ
+
+<br>
+
+<span>
+
+2026
+
+</span>
+
+</div>
+
+
+
+
+
+<div class="days-name">
+
+Пн&nbsp;&nbsp;Вт&nbsp;&nbsp;Ср&nbsp;&nbsp;Чт&nbsp;&nbsp;Пт&nbsp;&nbsp;Сб&nbsp;&nbsp;Вс
+
+</div>
+
+
+
+
+
+<div class="numbers">
+
+
+<span></span>
+<span></span>
+
+
+<span>1</span>
+<span>2</span>
+<span>3</span>
+<span>4</span>
+
+
+
+<span>5</span>
+<span>6</span>
+<span>7</span>
+<span>8</span>
+<span>9</span>
+<span>10</span>
+<span>11</span>
+
+
+
+<span>12</span>
+<span>13</span>
+<span>14</span>
+<span>15</span>
+
+
+<span class="selected">
+
+16
+
+</span>
+
+
+<span>17</span>
+<span>18</span>
+
+
+
+<span>19</span>
+<span>20</span>
+<span>21</span>
+<span>22</span>
+<span>23</span>
+<span>24</span>
+<span>25</span>
+
+
+
+<span>26</span>
+<span>27</span>
+<span>28</span>
+<span>29</span>
+<span>30</span>
+<span>31</span>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="date-info">
+
+Пятница
+
+<br>
+
+<b>
+16 октября 2026 года
+</b>
+
+
+<br><br>
+
+
+🕓 Начало в 16:00
+
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- МЕСТО -->
+
+
+<section class="place reveal">
+
+
+<h2>
+
+Место проведения
+
+</h2>
+
+
+
+<p>
+
+📍 Ресторан «Анталья»
+
+<br>
+
+город Кант
+
+</p>
+
+
+
+
+<a class="map-button"
+
+href="https://www.google.com/maps/search/?api=1&query=Ресторан+Анталья+Кант"
+
+target="_blank">
+
+🗺 Открыть карту
+
+</a>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ТАЙМЕР -->
+
+
+<section class="timer-section reveal">
+
+
+<h2>
+
+До нашей свадьбы осталось
+
+</h2>
+
+
+
+<div id="timer">
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- ПОДТВЕРЖДЕНИЕ -->
+
+
+<section class="confirm reveal">
+
+
+<h2>
+
+Будем рады видеть вас
+
+</h2>
+
+
+
+
+<a class="button"
+
+href="https://wa.me/996500478400"
+
+target="_blank">
+
+💌 Подтвердить присутствие
+
+</a>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<footer>
+
+
+С любовью ❤️
+
+<br>
+
+Азамат & Айгерим
+
+
+</footer>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
