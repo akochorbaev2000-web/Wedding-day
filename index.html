@@ -1,16 +1,34 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ky">
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>Азамат & Айгерим</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<meta name="theme-color" content="#f5e7c8">
+    <title>Азамат & Айгеримдин тою</title>
 
-<link rel="stylesheet" href="style.css">
+
+    <!-- =================================
+         ШРИФТЫ
+    ================================== -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
 </head>
 
@@ -18,475 +36,588 @@
 <body>
 
 
-<!-- ЗАГРУЗКА -->
+<!-- =================================
+     ЛЕПЕСТКИ
+================================== -->
 
-<div class="loader" id="loader">
+<div class="petals"></div>
 
-    <div class="loader-name">
-        Азамат & Айгерим
+
+
+<!-- =================================
+     ПЕРВАЯ СТРАНИЦА — КОНВЕРТ
+================================== -->
+
+<section class="main-page">
+
+    <div
+        class="container"
+        id="openBtn"
+    >
+
+
+        <!-- КОНВЕРТ -->
+
+        <div class="envelope-box">
+
+            <img
+                src="images/envelope.png"
+                class="envelope"
+                alt="Свадебный конверт"
+            >
+
+
+            <!-- КЛАПАН -->
+
+            <div class="flap"></div>
+
+
+            <!-- ВОСКОВАЯ ПЕЧАТЬ -->
+
+            <img
+                src="images/seal.png"
+                class="seal"
+                alt="Восковая печать"
+            >
+
+        </div>
+
+
+
+        <!-- =================================
+             ПРИГЛАШЕНИЕ ВНУТРИ
+        ================================== -->
+
+        <img
+            src="images/invitation.png"
+            class="invitation"
+            alt="Приглашение"
+        >
+
+
+        <div class="invitation-text">
+
+            <p>
+                Аруу тилек,
+                <br>
+                асыл максат жолубузда,
+                <br>
+                баш кошуп турмуш куруу оюбузда.
+            </p>
+
+
+            <p>
+                Өмүргө бирге аттанып,
+                <br>
+                кол кармашып,
+            </p>
+
+
+            <p>
+                келиңиздер
+                <br>
+                ак никелүү тоюбузга!!
+            </p>
+
+        </div>
+
     </div>
-
-    <div class="loader-line"></div>
-
-</div>
-
-
-
-<!-- КОНВЕРТ -->
-
-
-<section class="cover" id="cover">
-
-
-<div class="cover-text">
-
-Нажмите, чтобы открыть приглашение
-
-</div>
-
-
-
-<div class="envelope" onclick="openInvitation()">
-
-
-
-<div class="inside">
-
-
-<div class="card">
-
-
-<h1>
-
-Азамат
-
-<br>
-
-<span>&</span>
-
-<br>
-
-Айгерим
-
-
-</h1>
-
-
-</div>
-
-
-</div>
-
-
-
-<div class="flap"></div>
-
-
-<div class="front-left"></div>
-
-<div class="front-right"></div>
-
-
-
-<div class="seal">
-
-A & A
-
-</div>
-
-
-
-</div>
-
-
 
 </section>
 
 
 
+<!-- =================================
+     ВТОРАЯ СТРАНИЦА
+================================== -->
+
+<section class="guest-section">
+
+
+    <div class="guest-content">
+
+
+        <!-- =================================
+             ПРИВЕТСТВИЕ
+        ================================== -->
+
+        <div class="welcome-block">
+
+            <p class="welcome-title">
+                Урматтуу биздин сыйлуу конокторубуз!
+            </p>
+
+
+            <p class="welcome-text">
+                Жүрөгүбүздө чоң кубаныч сезими менен,
+                сиздерди балдарыбыз
+            </p>
+
+        </div>
 
 
 
+        <!-- =================================
+             ИМЕНА МОЛОДОЖЁНОВ
+        ================================== -->
+
+        <div class="couple-names">
+
+            <div class="couple-name">
+                Азамат &amp; Айгеримдин
+            </div>
+
+        </div>
 
 
-<!-- ОСНОВНОЙ САЙТ -->
+
+        <!-- =================================
+             ОСНОВНОЙ ТЕКСТ
+        ================================== -->
+
+        <p class="invitation-description">
+
+            үлпөт тоюбузга арналган салтанатыбызга келип,
+            ак дасторкон үстүндө даам сызып,
+            баталарыңызды берип,
+            кадырлуу коногубуз болуп кетүүгө чакырабыз!!
+
+        </p>
 
 
-<div class="site hidden" id="site">
+
+        <!-- =================================
+             КАЛЕНДАРЬ
+        ================================== -->
+
+        <div class="calendar-block">
+
+
+            <div class="calendar-label">
+                БАКТЫЛУУ КҮНҮБҮЗ
+            </div>
+
+
+            <div class="calendar-month">
+                ОКТЯБРЬ
+                <span>2026</span>
+            </div>
 
 
 
-<audio id="music" loop>
+            <!-- ДНИ НЕДЕЛИ -->
 
-<source src="violin.mp3" type="audio/mpeg">
+            <div class="calendar-week">
+
+                <span>ПН</span>
+                <span>ВТ</span>
+                <span>СР</span>
+                <span>ЧТ</span>
+                <span>ПТ</span>
+                <span>СБ</span>
+                <span>ВС</span>
+
+            </div>
+
+
+
+            <!-- ЧИСЛА -->
+
+            <div class="calendar-days">
+
+                <!-- Пустые дни перед 1 октября -->
+
+                <span class="empty"></span>
+                <span class="empty"></span>
+                <span class="empty"></span>
+
+
+                <!-- 1 -->
+
+                <span>1</span>
+
+
+                <!-- 2 -->
+
+                <span>2</span>
+
+
+                <!-- 3 -->
+
+                <span>3</span>
+
+
+                <!-- 4 -->
+
+                <span>4</span>
+
+
+
+                <!-- 5 -->
+
+                <span>5</span>
+
+
+                <!-- 6 -->
+
+                <span>6</span>
+
+
+                <!-- 7 -->
+
+                <span>7</span>
+
+
+                <!-- 8 -->
+
+                <span>8</span>
+
+
+                <!-- 9 -->
+
+                <span>9</span>
+
+
+                <!-- 10 -->
+
+                <span>10</span>
+
+
+                <!-- 11 -->
+
+                <span>11</span>
+
+
+
+                <!-- 12 -->
+
+                <span>12</span>
+
+
+                <!-- 13 -->
+
+                <span>13</span>
+
+
+                <!-- 14 -->
+
+                <span>14</span>
+
+
+                <!-- 15 -->
+
+                <span>15</span>
+
+
+                <!-- 16 — ДЕНЬ СВАДЬБЫ -->
+
+                <span class="wedding-day">
+                    16
+                </span>
+
+
+                <!-- 17 -->
+
+                <span>17</span>
+
+
+                <!-- 18 -->
+
+                <span>18</span>
+
+
+
+                <!-- 19 -->
+
+                <span>19</span>
+
+
+                <!-- 20 -->
+
+                <span>20</span>
+
+
+                <!-- 21 -->
+
+                <span>21</span>
+
+
+                <!-- 22 -->
+
+                <span>22</span>
+
+
+                <!-- 23 -->
+
+                <span>23</span>
+
+
+                <!-- 24 -->
+
+                <span>24</span>
+
+
+                <!-- 25 -->
+
+                <span>25</span>
+
+
+
+                <!-- 26 -->
+
+                <span>26</span>
+
+
+                <!-- 27 -->
+
+                <span>27</span>
+
+
+                <!-- 28 -->
+
+                <span>28</span>
+
+
+                <!-- 29 -->
+
+                <span>29</span>
+
+
+                <!-- 30 -->
+
+                <span>30</span>
+
+
+                <!-- 31 -->
+
+                <span>31</span>
+
+            </div>
+
+
+
+            <!-- ДАТА -->
+
+            <div class="calendar-date">
+
+                <div class="calendar-date-number">
+                    16
+                </div>
+
+                <div class="calendar-date-text">
+                    ОКТЯБРЯ 2026
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             РЕСТОРАН
+        ================================== -->
+
+        <div class="restaurant-block">
+
+
+            <div class="restaurant-icon">
+                ♢
+            </div>
+
+
+            <div class="restaurant-caption">
+                САЛТАНАТТЫН ӨТӨ ТУРГАН ЖЕРИ
+            </div>
+
+
+            <div class="restaurant-title">
+                Ресторан «Анталия»
+            </div>
+
+
+            <div class="restaurant-address">
+
+                ул. Ленина, 121А
+                <br>
+                г. Кант
+
+            </div>
+
+
+            <a
+                href="https://yandex.ru/profile/185932123858?lang=ru"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="map-button"
+            >
+                Открыть карту
+            </a>
+
+        </div>
+
+
+
+        <!-- =================================
+             ОБРАТНЫЙ ОТСЧЁТ
+        ================================== -->
+
+        <div class="countdown-block">
+
+
+            <div class="countdown-decoration">
+                ✦
+            </div>
+
+
+            <div class="countdown-title">
+                ДО НАШЕГО ПРАЗДНИКА
+            </div>
+
+
+
+            <div class="timer">
+
+
+                <div class="timer-item">
+
+                    <span id="days">
+                        00
+                    </span>
+
+                    <small>
+                        ДНЕЙ
+                    </small>
+
+                </div>
+
+
+
+                <div class="timer-item">
+
+                    <span id="hours">
+                        00
+                    </span>
+
+                    <small>
+                        ЧАСОВ
+                    </small>
+
+                </div>
+
+
+
+                <div class="timer-item">
+
+                    <span id="minutes">
+                        00
+                    </span>
+
+                    <small>
+                        МИНУТ
+                    </small>
+
+                </div>
+
+
+
+                <div class="timer-item">
+
+                    <span id="seconds">
+                        00
+                    </span>
+
+                    <small>
+                        СЕКУНД
+                    </small>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             ТОЙДУН ЭЭЛЕРИ
+        ================================== -->
+
+        <div class="owners">
+
+
+            <div class="owners-line"></div>
+
+
+            <div class="owners-title">
+                Тойдун ээлери
+            </div>
+
+
+            <div class="names">
+
+                <span>
+                    М а р л е н
+                </span>
+
+
+                <div class="owners-and">
+                    &amp;
+                </div>
+
+
+                <span>
+                    Н а з г ү л
+                </span>
+
+            </div>
+
+
+            <div class="owners-line"></div>
+
+        </div>
+
+
+
+        <!-- =================================
+             ФИНАЛ
+        ================================== -->
+
+        <div class="final-message">
+
+            <p>
+                Сиздерди чыдамсыздык менен күтөбүз!
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     МУЗЫКА
+================================== -->
+
+<audio
+    id="music"
+    loop
+>
+
+    <source
+        src="images/music.mp3"
+        type="audio/mpeg"
+    >
 
 </audio>
 
 
 
-<button class="music-button" onclick="toggleMusic()">
-
-🎻
-
-</button>
-
-
-
-
-
-
-
-<section class="hero">
-
-
-<h1>
-
-Азамат & Айгерим
-
-</h1>
-
-
-
-<p>
-
-С любовью приглашаем вас
-разделить с нами самый важный день нашей жизни
-
-</p>
-
-
-
-</section>
-
-
-
-
-
-
-
-
-
-<section class="welcome reveal">
-
-
-<h2>
-
-Дорогие родные и друзья!
-
-</h2>
-
-
-
-<p>
-
-С огромной радостью приглашаем вас
-на наше свадебное торжество.
-
-Будем счастливы видеть вас рядом с нами
-в этот особенный день.
-
-</p>
-
-
-</section>
-
-
-
-
-
-
-
-
-
-
-<!-- КАЛЕНДАРЬ -->
-
-
-<section class="calendar-section reveal">
-
-
-<h2>
-
-Дата нашей свадьбы
-
-</h2>
-
-
-
-<div class="calendar">
-
-
-
-<div class="calendar-title">
-
-ОКТЯБРЬ
-
-<br>
-
-<span>
-
-2026
-
-</span>
-
-</div>
-
-
-
-
-
-<div class="days-name">
-
-Пн&nbsp;&nbsp;Вт&nbsp;&nbsp;Ср&nbsp;&nbsp;Чт&nbsp;&nbsp;Пт&nbsp;&nbsp;Сб&nbsp;&nbsp;Вс
-
-</div>
-
-
-
-
-
-<div class="numbers">
-
-
-<span></span>
-<span></span>
-
-
-<span>1</span>
-<span>2</span>
-<span>3</span>
-<span>4</span>
-
-
-
-<span>5</span>
-<span>6</span>
-<span>7</span>
-<span>8</span>
-<span>9</span>
-<span>10</span>
-<span>11</span>
-
-
-
-<span>12</span>
-<span>13</span>
-<span>14</span>
-<span>15</span>
-
-
-<span class="selected">
-
-16
-
-</span>
-
-
-<span>17</span>
-<span>18</span>
-
-
-
-<span>19</span>
-<span>20</span>
-<span>21</span>
-<span>22</span>
-<span>23</span>
-<span>24</span>
-<span>25</span>
-
-
-
-<span>26</span>
-<span>27</span>
-<span>28</span>
-<span>29</span>
-<span>30</span>
-<span>31</span>
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-<div class="date-info">
-
-Пятница
-
-<br>
-
-<b>
-16 октября 2026 года
-</b>
-
-
-<br><br>
-
-
-🕓 Начало в 16:00
-
-
-</div>
-
-
-
-
-</section>
-
-
-
-
-
-
-
-
-
-<!-- МЕСТО -->
-
-
-<section class="place reveal">
-
-
-<h2>
-
-Место проведения
-
-</h2>
-
-
-
-<p>
-
-📍 Ресторан «Анталья»
-
-<br>
-
-город Кант
-
-</p>
-
-
-
-
-<a class="map-button"
-
-href="https://www.google.com/maps/search/?api=1&query=Ресторан+Анталья+Кант"
-
-target="_blank">
-
-🗺 Открыть карту
-
-</a>
-
-
-
-</section>
-
-
-
-
-
-
-
-
-
-<!-- ТАЙМЕР -->
-
-
-<section class="timer-section reveal">
-
-
-<h2>
-
-До нашей свадьбы осталось
-
-</h2>
-
-
-
-<div id="timer">
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-
-
-
-
-
-<!-- ПОДТВЕРЖДЕНИЕ -->
-
-
-<section class="confirm reveal">
-
-
-<h2>
-
-Будем рады видеть вас
-
-</h2>
-
-
-
-
-<a class="button"
-
-href="https://wa.me/996500478400"
-
-target="_blank">
-
-💌 Подтвердить присутствие
-
-</a>
-
-
-
-
-</section>
-
-
-
-
-
-
-
-
-<footer>
-
-
-С любовью ❤️
-
-<br>
-
-Азамат & Айгерим
-
-
-</footer>
-
-
-
-
-
-
-</div>
-
-
-
-
-
+<!-- JS -->
 
 <script src="script.js"></script>
 
