@@ -1,310 +1,103 @@
-//
-// ЗАГРУЗКА САЙТА
-//
+// =====================================
+// ЭЛЕМЕНТЫ
+// =====================================
 
-window.onload = function(){
+const envelope =
+    document.getElementById("openBtn");
 
-    setTimeout(()=>{
+const music =
+    document.getElementById("music");
 
-        document
-        .getElementById("loader")
-        .classList.add("hide");
-
-    },2000);
-
-};
-
-
-
-
-
-//
-// ОТКРЫТИЕ КОНВЕРТА
-//
-
+const guestSection =
+    document.querySelector(".guest-section");
 
 let opened = false;
 
 
-function openInvitation(){
 
 
-    if(opened) return;
+
+// =====================================
+// ЛЕПЕСТКИ
+// =====================================
+
+const petals =
+    document.querySelector(".petals");
+
+
+for(let i = 0; i < 45; i++){
+
+    const petal =
+        document.createElement("div");
+
+    petal.className = "petal";
+
+    petal.style.left =
+        Math.random() * 100 + "%";
+
+    petal.style.width =
+        (8 + Math.random() * 9) + "px";
+
+    petal.style.height =
+        (8 + Math.random() * 9) + "px";
+
+    petal.style.opacity =
+        0.35 + Math.random() * 0.5;
+
+    petal.style.animationDuration =
+        (6 + Math.random() * 8) + "s";
+
+    petal.style.animationDelay =
+        Math.random() * 8 + "s";
+
+    petals.appendChild(petal);
+
+}
+
+
+
+
+
+// =====================================
+// ОТКРЫТИЕ КОНВЕРТА
+// =====================================
+
+envelope.addEventListener("click", function(){
+
+    if(opened){
+        return;
+    }
 
 
     opened = true;
 
 
-
-    let envelope =
-    document.querySelector(".envelope");
-
-
-
     envelope.classList.add("open");
 
 
+    setTimeout(function(){
 
-    document
-    .querySelector(".cover")
-    .classList.add("blur");
+        document.body.classList.add("opened");
 
+    }, 1200);
 
 
 
-    setTimeout(()=>{
+    // Музыка
 
+    if(music){
 
-        document
-        .getElementById("cover")
-        .style.display="none";
+        music.volume = 0.35;
 
+        music.play().catch(function(){
 
+            console.log(
+                "Автоматическое воспроизведение музыки заблокировано браузером."
+            );
 
-        document
-        .getElementById("site")
-        .classList.remove("hidden");
+        });
 
-
-
-        startMusic();
-
-
-
-        createPetals();
-
-
-
-    },1500);
-
-
-
-}
-
-
-
-
-
-
-
-//
-// МУЗЫКА
-//
-
-
-let musicPlaying=false;
-
-
-
-function startMusic(){
-
-
-let music =
-document.getElementById("music");
-
-
-
-music.volume=0;
-
-
-
-music.play()
-
-.then(()=>{
-
-
-musicPlaying=true;
-
-
-
-let volume=0;
-
-
-
-let fade=setInterval(()=>{
-
-
-if(volume<0.35){
-
-
-volume+=0.02;
-
-
-music.volume=volume;
-
-
-}
-
-else{
-
-
-clearInterval(fade);
-
-
-}
-
-
-
-},100);
-
-
-
-})
-
-
-.catch(()=>{
-
-
-console.log(
-"Нажмите кнопку 🎻 для включения музыки"
-);
-
-
-});
-
-
-}
-
-
-
-
-
-function toggleMusic(){
-
-
-let music =
-document.getElementById("music");
-
-
-
-if(musicPlaying){
-
-
-music.pause();
-
-
-musicPlaying=false;
-
-
-}
-
-else{
-
-
-music.play();
-
-
-musicPlaying=true;
-
-
-}
-
-
-
-}
-
-
-
-
-
-
-
-
-//
-// ЛЕПЕСТКИ РОЗ
-//
-
-
-function createPetals(){
-
-
-for(let i=0;i<40;i++){
-
-
-
-let petal =
-document.createElement("div");
-
-
-
-petal.className="petal";
-
-
-
-petal.style.left =
-Math.random()*100+"vw";
-
-
-
-petal.style.animationDuration =
-(4+Math.random()*5)+"s";
-
-
-
-document.body.appendChild(petal);
-
-
-
-setTimeout(()=>{
-
-
-petal.remove();
-
-
-},9000);
-
-
-
-}
-
-
-
-}
-
-
-
-
-
-
-
-
-//
-// ПОЯВЛЕНИЕ БЛОКОВ
-//
-
-
-let reveals =
-document.querySelectorAll(".reveal");
-
-
-
-
-window.addEventListener("scroll",()=>{
-
-
-reveals.forEach(item=>{
-
-
-let position =
-item.getBoundingClientRect()
-.top;
-
-
-
-if(position <
-window.innerHeight-100){
-
-
-item.classList.add("show");
-
-
-}
-
-
-
-});
-
-
+    }
 
 });
 
@@ -312,112 +105,134 @@ item.classList.add("show");
 
 
 
+// =====================================
+// ПОКАЗ ВТОРОЙ СТРАНИЦЫ
+// =====================================
+
+window.addEventListener("scroll", function(){
+
+    if(!opened){
+        return;
+    }
+
+
+    const position =
+        guestSection.getBoundingClientRect().top;
+
+
+    if(
+        position <
+        window.innerHeight * 0.85
+    ){
+
+        guestSection.classList.add("show");
+
+    }
+
+});
 
 
 
-//
-// ТАЙМЕР
-//
 
 
+// =====================================
+// ОБРАТНЫЙ ОТСЧЁТ
+// =====================================
 
-let weddingDate =
-new Date(
-"October 16 2026 16:00:00"
-)
-.getTime();
-
-
+const weddingDate =
+    new Date(
+        "October 16, 2026 17:00:00"
+    ).getTime();
 
 
 function updateTimer(){
 
+    const now =
+        new Date().getTime();
 
 
-let now =
-new Date()
-.getTime();
+    const distance =
+        weddingDate - now;
 
 
+    if(distance <= 0){
 
-let distance =
-weddingDate-now;
+        document.getElementById("days").textContent =
+            "00";
 
+        document.getElementById("hours").textContent =
+            "00";
 
+        document.getElementById("minutes").textContent =
+            "00";
 
-if(distance<=0){
+        document.getElementById("seconds").textContent =
+            "00";
 
+        return;
 
-document.getElementById("timer")
-.innerHTML=
-"Сегодня наш день ❤️";
-
-
-return;
-
-
-}
-
+    }
 
 
-
-let days =
-Math.floor(
-distance /
-(1000*60*60*24)
-);
-
+    const days =
+        Math.floor(
+            distance /
+            (1000 * 60 * 60 * 24)
+        );
 
 
-let hours =
-Math.floor(
-(distance %
-(1000*60*60*24))
-/
-(1000*60*60)
-);
+    const hours =
+        Math.floor(
+            (distance %
+            (1000 * 60 * 60 * 24))
+            /
+            (1000 * 60 * 60)
+        );
 
 
-
-let minutes =
-Math.floor(
-(distance %
-(1000*60*60))
-/
-(1000*60)
-);
-
+    const minutes =
+        Math.floor(
+            (distance %
+            (1000 * 60 * 60))
+            /
+            (1000 * 60)
+        );
 
 
-let seconds =
-Math.floor(
-(distance %
-(1000*60))
-/
-1000
-);
+    const seconds =
+        Math.floor(
+            (distance %
+            (1000 * 60))
+            /
+            1000
+        );
 
 
+    document.getElementById("days").textContent =
+        String(days).padStart(2,"0");
 
 
-
-document.getElementById("timer")
-.innerHTML =
-
-
-days+" дней · "+
-
-hours+" часов · "+
-
-minutes+" минут · "+
-
-seconds+" секунд";
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2,"0");
 
 
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2,"0");
 
+
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2,"0");
 
 }
 
+
+updateTimer();
+
+
+setInterval(
+    updateTimer,
+    1000
+);
 
 
 setInterval(updateTimer,1000);
